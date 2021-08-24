@@ -59,12 +59,15 @@ public class Board {
 			throw new BoardException("position not on the board");
 		}
 		if(piece(position) == null) {
+			return null;
+		}
 			Piece aux = piece(position);
 			aux.position = null;
 			pieces[position.getRow()][position.getColumn()] = null;
 			return aux;
 		}
-	}
+		
+	
 	
 	//verificando se uma  posicao existe 
 	private boolean positionExists(int row, int column) {
